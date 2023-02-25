@@ -17,7 +17,7 @@ struct CreateThumbnail: AsyncParsableCommand {
               transform: URL.init(fileURLWithPath:))
     var inputFile: URL
 
-    @Option(help: "The dimensions to use for the thumbnail image.",
+    @Option(help: .init("The dimensions to use for the thumbnail image.", valueName: "width,height"),
             transform: { $0.components(separatedBy: ",").compactMap(Double.init(_:)) })
     var dimensions: [Double] = [1024, 1024]
 
